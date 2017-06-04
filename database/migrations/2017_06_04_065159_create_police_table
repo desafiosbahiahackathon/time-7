@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePoliceTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+      Schema::table('police', function (Blueprint $table) {
+        $table->increments('id_police');
+        $table->string('matricula');
+        $table->integer('id_policial')->unsigned();
+        $table->integer('id_policia')->unsigned();
+        $table->foreign('id_policial')->references('id_guarnicao')->on('guarnicao');
+        $table->foreign('id_policia')->references('id')->on('users');
+      });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}

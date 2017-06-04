@@ -1,0 +1,59 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateTableQuestionario extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('questionario', function (Blueprint $table) {
+          /*  $table->increments('id');
+            $table->string('nome');
+            $table->string('end_residencial');
+            $table->string('ponto_referencia');
+            $table->string('bairro');
+            $table->string('end_visita');
+            $table->string('ponto_referencia_v');
+            $table->string('bairro_end_v');
+            $table->string('telefone');
+            $table->string('melhor_turno');
+            $table->string('estado_civil');
+            $table->string('filhos');
+            $table->string('faixa_filhos');
+            $table->string('filhos_agressor');
+            $table->string('escolaridade');
+            $table->string('etnia');
+            $table->integer('idade');
+            $table->string('religiao');
+            $table->string('profissao');
+            $table->string('ultimo_emprego');
+            $table->string('trabalha');
+            $table->string('local_trabalho');
+            $table->string('renda');
+            $table->string('responsavel_sustento');
+            $table->string('origem_solicitacao');
+            $table->string('guarnicao');
+            $table->integer('mpu');
+            $table->date('data_visita');*/
+            $table->integer('risco');
+            //$table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('questionario');
+    }
+}
